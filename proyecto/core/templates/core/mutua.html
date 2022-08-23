@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{% load static %}
+<html>
+	<head>
+		<link rel="icon" href="{% static 'core/images/pngmoove.ico' %}">
+		<script src="../../Controllers/Mutua/mutuaController.js"></script>
+	</head>
+	<head>
+		<title>MooveCars Tools</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'core/assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="{% url 'home' %}" class="title">MooveCars Tools</a>
+				<nav>
+					<ul>
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'mutua' %}" class="active">Mutua vs MF</a></li>
+						<li><a href="{% url 'fundae' %}" >Fundae</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div align="center" class="inner" >
+							<label id="mensajesError" style="color:red; text-align: center; display: none;">Esto es una prueba de mensajes</label>
+							<h3 align="left"> Subir el documento Mutua</h2>
+							<form action="{% url 'mutua'%}" id="frmMutua" method="POST" enctype="multipart/form-data">
+								<input type="text" name="fileTitle" placeholder="Introduzca nombre del documento">
+								<input type="file" id= "uploadedFile" name="uploadedFile">
+								
+								{% csrf_token %}
+								<input type="submit" id="botonMutua" value="Mutua">
+						</form>
+						<hr>
+
+						{% csrf_token %}
+						
+						<!--
+						<table>
+							<h3 align="left"> Registro de archivos procesados </h2> 
+							<tr>
+								<th>ID</th>
+								<th>Titulo</th>
+								<th>Ruta de archivo</th>
+								<th>Fecha y hora</th>
+							</tr>
+							{% for file in files %}
+								<tr>
+									<td>{{ file.id }}</td>
+									<td>{{ file.title }}</td>
+									<td>{{ file.uploadedFile.url }}</td>
+									<td>{{ file.dateTimeOfUpload }}</td>
+								</tr>
+							{% endfor %}
+						</table>
+						</div>
+					</section>
+
+			</div>-->
+		
+
+		<!-- Scripts -->
+			<script src="{% static 'core/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/util.js' %}"></script>
+			<script src="{% static 'core/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

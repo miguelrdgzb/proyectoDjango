@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{% load static %}
+<html>
+	<head>
+		<link rel="icon" href="{% static 'core/images/pngmoove.ico' %}">
+	</head>
+	<head>
+		<title>MooveCars Tools</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'core/assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="{% url 'home' %}" class="title">MooveCars Tools</a>
+				<nav>
+					<ul>
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'mutua' %}" >Mutua vs MF</a></li>
+						<li><a href="{% url 'fundae' %}" class="active">Fundae</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">							<span class="image fit"><img src="{% static 'core/images/pic07.jpg' %}" alt="" /></span>
+							<p>Instrucciones de uso y requisitos</p>
+							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+						</div>
+						<div align="center" class="inner" >
+						<hr>
+					<!-- Text -->
+					<section>
+						<h2>Formulario</h2>
+						<form action="{% url 'fundae'%}" id="frmFundae" method="POST" enctype="multipart/form-data">
+						<input type="text" id ="idAccion" name="idAccion" placeholder="Introduzca idAccion">
+						<hr>
+						<hr>	
+						<input type="text" id ="idGrupo" name="idGrupo" placeholder="Introduzca idGrupo">
+						<hr>
+						<hr>
+						<input type="text" id ="cifEmpresa" name="cifEmpresa" placeholder="Introduzca CIF de empresa">
+						<hr>
+						<hr>
+						<input type="text" id="CCC" name="CCC" placeholder="Introduzca CCC de empresa">
+						<hr>
+						<hr>
+						<input type="text" id="periodoFormacion" name="periodoFormacion" placeholder="Introduzca periodo comprendido(sep por comas)">
+						<hr>
+						<hr>
+						<input type="text" id="importesPeriodos" name="importesPeriodos" placeholder="Introduzca importes imputados a cada periodo(sep por comas)">
+						<hr>
+						<hr>
+						<input type="text" id="costes" name="costes" placeholder="Imputa los costes directos,indirectos y salariales (sep por comas)">
+						<h3 align="left"> Subir el documento Fundae</h2>
+						<input type="file" id= "uploadedFile" name="uploadedFile">
+						{% csrf_token %}
+						<input type="submit" value="Generar xml">
+						
+				
+						
+						</form>
+						
+						
+						<!--
+						<table>
+							<h3 align="left"> Registro de archivos procesados </h2> 
+							<tr>
+								<th>ID</th>
+								<th>Titulo</th>
+								<th>Ruta de archivo</th>
+								<th>Fecha y hora</th>
+							</tr>
+							{% for file in files %}
+								<tr>
+									<td>{{ file.id }}</td>
+									<td>{{ file.title }}</td>
+									<td>{{ file.uploadedFile.url }}</td>
+									<td>{{ file.dateTimeOfUpload }}</td>
+								</tr>
+							{% endfor %}
+						</table>
+						</div>
+					</section>
+
+			</div>-->
+		<!-- Footer -->
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; MooveCars. All rights reserved</li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'core/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'core/assets/js/util.js' %}"></script>
+			<script src="{% static 'core/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
